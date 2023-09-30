@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Dicoding-Belajar_Membuat_Aplikasi_Android_Untuk_Pemula</string>
+    <string name="pindah_activity">Pindah Activity</string>
+    <string name="pindah_activity_dengan_data">Pindah Activity dengan Data</string>
+    <string name="pindah_activity_dengan_object">Pindah Activity dengan Object</string>
+    <string name="pindah_activity_untuk_result">Pindah Activity untuk Result</string>
+    <string name="dial_number">Dial Number</string>
+    <string name="_150">150</string>
+    <string name="_200">200</string>
+    <string name="_250">250</string>
+    <string name="select_number">Pilih Angka :</string>
+    <string name="select">Pilih</string>
+    <string name="result_from_activity">Hasil Dari Activity</string>
+    <string name="this_is_activity">Ini MoveActivity</string>
 </resources>
