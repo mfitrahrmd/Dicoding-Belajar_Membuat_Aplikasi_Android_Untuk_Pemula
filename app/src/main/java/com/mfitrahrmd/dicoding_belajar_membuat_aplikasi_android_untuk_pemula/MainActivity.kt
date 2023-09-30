@@ -8,12 +8,20 @@ import android.widget.TextView
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        private const val STATE_RESULT = "state_result"
+    }
+
     private lateinit var _mainBinding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(_mainBinding.root)
+
+        if (savedInstanceState != null) {
+            _mainBinding.tvResult.text = savedInstanceState.getString(STATE_RESULT)
+        }
 
         _mainBinding.btnCalculate.setOnClickListener {
             val length = _mainBinding.etLength.text.toString().trim()
@@ -46,5 +54,10 @@ class MainActivity : AppCompatActivity() {
 
     fun calculateVolume(length: Double, width: Double, height: Double): Double {
         return length * width * height
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(STATE_RESULT, _mainBinding.tvResult.text.toString())
     }
 }
