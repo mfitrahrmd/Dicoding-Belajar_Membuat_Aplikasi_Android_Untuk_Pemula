@@ -16,11 +16,29 @@ class MainActivity : AppCompatActivity() {
         setContentView(_mainBinding.root)
 
         _mainBinding.btnCalculate.setOnClickListener {
-            val length = _mainBinding.etLength.text.toString().toDouble()
-            val width = _mainBinding.etWidth.text.toString().toDouble()
-            val height = _mainBinding.etHeight.text.toString().toDouble()
+            val length = _mainBinding.etLength.text.toString().trim()
+            val width = _mainBinding.etWidth.text.toString().trim()
+            val height = _mainBinding.etHeight.text.toString().trim()
 
-            val volume = calculateVolume(length, width, height)
+            var isEmptyFields = false
+            val errorMessage = "Field ini tidak boleh kosong"
+
+            if (length.isEmpty()) {
+                isEmptyFields = true
+                _mainBinding.etLength.error = errorMessage
+            }
+            if (width.isEmpty()) {
+                isEmptyFields = true
+                _mainBinding.etWidth.error = errorMessage
+            }
+            if (height.isEmpty()) {
+                isEmptyFields = true
+                _mainBinding.etHeight.error = errorMessage
+            }
+
+            if (isEmptyFields) return@setOnClickListener
+
+            val volume = calculateVolume(length.toDouble(), width.toDouble(), height.toDouble())
 
             _mainBinding.tvResult.text = volume.toString()
         }
