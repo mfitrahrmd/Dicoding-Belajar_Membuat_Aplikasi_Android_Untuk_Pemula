@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DicodingBelajar_Membuat_Aplikasi_Android_Untuk_Pemula" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.DicodingBelajar_Membuat_Aplikasi_Android_Untuk_Pemula" parent="Base.Theme.DicodingBelajar_Membuat_Aplikasi_Android_Untuk_Pemula" />
+</resources>
