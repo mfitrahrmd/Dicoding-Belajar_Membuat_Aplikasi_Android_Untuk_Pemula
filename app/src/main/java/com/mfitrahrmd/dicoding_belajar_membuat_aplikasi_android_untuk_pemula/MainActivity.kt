@@ -58,7 +58,7 @@ class MainVM : ViewModel() {
     val heroes: ArrayList<Hero> = arrayListOf(
         Hero("Soekarno", "the number one", "https://upload.wikimedia.org/wikipedia/commons/0/01/Presiden_Sukarno.jpg"),
         Hero("Soeharto", "the number two", "https://upload.wikimedia.org/wikipedia/commons/5/59/President_Suharto%2C_1993.jpg"),
-        Hero("Habibie", "the number three", "https://id.wikipedia.org/wiki/B._J._Habibie#/media/Berkas:B._J._Habibie,_President_of_Indonesia_portrait.jpg"),
+        Hero("Habibie", "the number three", "https://upload.wikimedia.org/wikipedia/commons/2/2a/B._J._Habibie%2C_President_of_Indonesia_portrait.jpg"),
         Hero("Gusdur", "the number four", "https://upload.wikimedia.org/wikipedia/commons/3/35/President_Abdurrahman_Wahid_-_Indonesia.jpg"),
         Hero("Megawati", "the number five", "https://upload.wikimedia.org/wikipedia/commons/9/9f/Megawati_Sukarnoputri_official_portrait.jpg"),
     )
