@@ -61,4 +61,6 @@
     <color name="md_theme_dark_surfaceTint">#A4C9FF</color>
     <color name="md_theme_dark_outlineVariant">#43474E</color>
     <color name="md_theme_dark_scrim">#000000</color>
+    
+    <color name="priestess">#FDBA01</color>
 </resources>
