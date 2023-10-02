@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginVertical="8dp"
+    android:layout_marginHorizontal="12dp"
+    android:paddingHorizontal="8dp"
+    android:paddingBottom="8dp"
+    android:paddingTop="50dp"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_char"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/priestess"
+        app:cardCornerRadius="24dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="32dp"
+            android:minHeight="250dp">
+
+            <TextView
+                android:id="@+id/tv_char_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Priestess"
+                android:gravity="center"
+                android:textSize="32sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tv_title_specialities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="specialities"
+                android:textAllCaps="true"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tv_char_info"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_char_name" />
+
+            <TextView
+                android:id="@+id/tv_char_specialities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Regen"
+                app:layout_constraintStart_toStartOf="@+id/tv_title_specialities"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_specialities" />
+
+            <TextView
+                android:id="@+id/tv_char_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:text="The Priestess has good armor and energy, but bad health and melee damage."
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/iv_char"
+        android:layout_width="200dp"
+        android:layout_height="225dp"
+        android:layout_marginTop="-100dp"
+        android:layout_gravity="end"
+        android:src="@drawable/priestess_0"
+        android:transitionName="iv_char"
+        />
+
+</FrameLayout>
