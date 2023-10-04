@@ -1,6 +1,7 @@
 package com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Canvas
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -83,6 +84,10 @@ class CharacterListActivity : AppCompatActivity() {
                     )
                 )
             ))
+
+            characterListAdapter.setOnItemClickCallback { c ->
+                startActivity(Intent(this@CharacterListActivity, CharacterDetailActivity::class.java).putExtra(CharacterDetailActivity.EXTRA_CHARACTER, c))
+            }
 
             adapter = characterListAdapter
 
