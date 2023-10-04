@@ -8,12 +8,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.data.Buff
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.data.Character
+import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.data.Skin
+import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.data.Weapon
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.ActivityCharacterListBinding
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.ItemCharacterBinding
 
 class CharacterListAdapter(val characters: ArrayList<Character>) :
     RecyclerView.Adapter<CharacterListAdapter.CharacterListViewHolder>() {
+    private var _onItemClickCallback: ((Character) -> Unit)? = null
+
     class CharacterListViewHolder(val itemCharacterBinding: ItemCharacterBinding) :
         RecyclerView.ViewHolder(itemCharacterBinding.root)
 
@@ -32,10 +37,17 @@ class CharacterListAdapter(val characters: ArrayList<Character>) :
                 tvCharName.text = name
                 tvCharSpecialities.text = specialities.joinToString(", ")
                 tvCharInfo.text = info
-                ivChar.setImageResource(imageId)
+                ivChar.setImageResource(skins.first().imageId)
                 cardChar.setCardBackgroundColor(color)
             }
         }
+        holder.itemView.setOnClickListener {
+            _onItemClickCallback?.invoke(characters[position])
+        }
+    }
+
+    fun setOnItemClickCallback(onItemClick: (Character) -> Unit) {
+        _onItemClickCallback = onItemClick
     }
 }
 
@@ -48,10 +60,28 @@ class CharacterListActivity : AppCompatActivity() {
         setContentView(_characterListBinding.root)
 
         with(_characterListBinding.rvCharacters) {
-            adapter = CharacterListAdapter(arrayListOf(
-                Character("Priestess", arrayListOf("regen"), "She has blonde hair, aqua eyes, and is wearing a white hooded robe.", R.drawable.priestess_0, -8893),
-                Character("Witch", arrayListOf("crowd control", "magic burst"), "She appears to be an amaranth-haired female wearing a bandana scarf of the same color, with a rust brown cloak and pointed hat. She also appears to wear a black blouse and boots.", R.drawable.witch_0, -3704256),
+            val characterListAdapter = CharacterListAdapter(arrayListOf(
+                Character(
+                    "Priestess",
+                    arrayOf("regen"),
+                    "The Priestess has good armor and energy, but bad health and melee damage",
+                    R.color.priestess,
+                    Buff("Improve potion efectiveness", R.drawable.buff_potioneffectiveness),
+                    arrayOf(
+                        Skin("Holy White", R.drawable.priestess_0, null),
+                        Skin("Boyi the Valor", R.drawable.priestess_7, null),
+                        Skin("Virgo", R.drawable.priestess_17, R.drawable.priestess_art_17)
+                    ),
+                    arrayOf(
+                        Weapon("Wooden Cross", "Staff", 4, 2, 0, 5, R.drawable.priestess_weapon_0),
+                        Weapon("Wooden Cross", "Staff", 4, 2, 0, 5, R.drawable.priestess_weapon_7),
+                        Weapon("Stellar Whisper", "Staff", 4, 2, 0, 5, R.drawable.priestess_weapon_17),
+                    )
+                )
             ))
+
+            adapter = characterListAdapter
+
             layoutManager = LinearLayoutManager(this@CharacterListActivity)
             addItemDecoration(object : RecyclerView.ItemDecoration() {
                 @SuppressLint("UseCompatLoadingForDrawables")
