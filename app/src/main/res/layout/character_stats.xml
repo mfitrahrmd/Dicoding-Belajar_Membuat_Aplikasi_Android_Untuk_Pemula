@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_weap"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="200dp"/>
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/iv_buff"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight=".25"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:id="@+id/tv_buff_desc"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".75"
+            android:gravity="center"
+            android:textSize="16sp" />
+
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="37.5dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/ic_health" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="37.5dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/ic_armor" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="37.5dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/ic_energy" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="37.5dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/ic_damage" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tv_char_hlth"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_char_armr"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_char_enrgy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_char_dmg"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textSize="24sp" />
+
+    </TableRow>
+
+</TableLayout>
