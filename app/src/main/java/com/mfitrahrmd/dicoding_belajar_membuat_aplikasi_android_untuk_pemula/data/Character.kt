@@ -8,6 +8,6 @@ data class Character(
     val name: String,
     val specialities: ArrayList<String>,
     val info: String,
-    val image: Int,
+    val imageId: Int,
     val color: Int
 ) : Parcelable

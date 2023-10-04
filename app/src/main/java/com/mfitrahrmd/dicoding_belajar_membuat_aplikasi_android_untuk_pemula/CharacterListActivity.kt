@@ -32,7 +32,7 @@ class CharacterListAdapter(val characters: ArrayList<Character>) :
                 tvCharName.text = name
                 tvCharSpecialities.text = specialities.joinToString(", ")
                 tvCharInfo.text = info
-                ivChar.setImageResource(image)
+                ivChar.setImageResource(imageId)
                 cardChar.setCardBackgroundColor(color)
             }
         }
