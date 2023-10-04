@@ -3,6 +3,7 @@ package com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.ad
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.R
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.data.Weapon
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.WeaponBinding
 
@@ -22,9 +23,14 @@ class WeaponInfoViewPagerAdapter(
     override fun onBindViewHolder(holder: WeaponViewHolder, position: Int) {
         with(holder) {
             with(_pages[position]) {
-                _binding.ivWeapImage.setImageResource(imageId)
-                _binding.tvWeapName.text = name
-                _binding.tvWeapType.text = "($type)"
+                with(_binding) {
+                    tvWeapName.text = name
+                    tvWeapType.text = holder.itemView.context.getString(R.string.parentheses, tvWeapType)
+                    tvWeapDmg.text = damage.toString()
+                    tvWeapEnrgyCost.text = energyCost.toString()
+                    tvWeapCritChnce.text = critChance.toString()
+                    tvWeapInacc.text = inaccuracy.toString()
+                }
             }
         }
     }
