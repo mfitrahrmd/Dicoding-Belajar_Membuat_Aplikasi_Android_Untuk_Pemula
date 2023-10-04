@@ -65,6 +65,10 @@ class CharacterListActivity : AppCompatActivity() {
                     "Priestess",
                     arrayOf("regen"),
                     "The Priestess has good armor and energy, but bad health and melee damage",
+                    3,
+                    5,
+                    200,
+                    3,
                     R.color.priestess,
                     Buff("Improve potion efectiveness", R.drawable.buff_potioneffectiveness),
                     arrayOf(
