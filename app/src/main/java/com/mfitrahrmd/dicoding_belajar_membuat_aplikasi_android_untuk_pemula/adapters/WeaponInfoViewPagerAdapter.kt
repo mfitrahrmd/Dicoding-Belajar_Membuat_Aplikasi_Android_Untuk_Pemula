@@ -25,11 +25,12 @@ class WeaponInfoViewPagerAdapter(
             with(_pages[position]) {
                 with(_binding) {
                     tvWeapName.text = name
-                    tvWeapType.text = holder.itemView.context.getString(R.string.parentheses, tvWeapType)
+                    tvWeapType.text = holder.itemView.context.getString(R.string.parentheses, type)
                     tvWeapDmg.text = damage.toString()
                     tvWeapEnrgyCost.text = energyCost.toString()
                     tvWeapCritChnce.text = critChance.toString()
                     tvWeapInacc.text = inaccuracy.toString()
+                    ivWeapImage.setImageResource(imageId)
                 }
             }
         }
