@@ -58,6 +58,11 @@ class CharacterDetailActivity : AppCompatActivity() {
                     characterStatsFragment.setWeaponViewPagerPosition(position) // slide weapon view pager
                 }
             })
+
+            _binding.btnSwitchImage.setOnClickListener {
+                characterSkinVPA.toggleArt(_binding.vpCharSkin.currentItem) // toggle show character skin illustration art
+                characterSkinVPA.notifyItemChanged(_binding.vpCharSkin.currentItem) // notify adapter if there is data changed, so the view gets re-bind
+            }
         }
     }
 
