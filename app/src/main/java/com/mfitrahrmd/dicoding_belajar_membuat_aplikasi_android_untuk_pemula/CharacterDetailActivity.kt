@@ -23,19 +23,12 @@ class CharacterDetailActivity : AppCompatActivity() {
         _binding = ActivityCharacterDetailBinding.inflate(layoutInflater)
         setContentView(_binding.root)
 
-        // TODO : Character data from intent
-        val character = if (Build.VERSION.SDK_INT >= 33) {
-            intent.getParcelableExtra(EXTRA_CHARACTER, Character::class.java)
-        } else {
-            @Suppress("DEPRECATION")
-            intent.getParcelableExtra(EXTRA_CHARACTER)
-        }
+        val character = getCharacterFromIntent()
 
         if (character != null) {
 
             // Update view
             _binding.tvCharName.text = character.name
-
 
             // Instantiate horizontal view pager character info
             val characterStatsFragment = CharacterStatsFragment(character)
@@ -65,6 +58,15 @@ class CharacterDetailActivity : AppCompatActivity() {
                     characterStatsFragment.setWeaponViewPagerPosition(position) // slide weapon view pager
                 }
             })
+        }
+    }
+
+    private fun getCharacterFromIntent(): Character? {
+        return if (Build.VERSION.SDK_INT >= 33) {
+            intent.getParcelableExtra(EXTRA_CHARACTER, Character::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            intent.getParcelableExtra(EXTRA_CHARACTER)
         }
     }
 }
