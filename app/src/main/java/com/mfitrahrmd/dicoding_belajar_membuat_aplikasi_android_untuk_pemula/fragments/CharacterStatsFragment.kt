@@ -1,4 +1,4 @@
-package com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula
+package com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -9,6 +9,7 @@ import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.ada
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.adapters.CharacterSkinInfoViewPagerAdapter
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.data.Character
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.ActivityCharacterDetailBinding
+import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.fragments.CharacterStatsFragment
 
 class CharacterDetailActivity : AppCompatActivity() {
     companion object {
