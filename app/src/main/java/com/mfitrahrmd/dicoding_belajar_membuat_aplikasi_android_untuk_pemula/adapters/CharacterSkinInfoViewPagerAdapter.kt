@@ -7,11 +7,18 @@ import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.dat
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.CharacterBinding
 
 class CharacterSkinInfoViewPagerAdapter(
-    private val _pages: Array<Skin>,
+    pages: Array<Skin>,
 ) : RecyclerView.Adapter<CharacterSkinInfoViewPagerAdapter.CharacterViewHolder>() {
     private lateinit var _binding: CharacterBinding
 
-    class CharacterViewHolder(binding: CharacterBinding): RecyclerView.ViewHolder(binding.root)
+    private val _pages = pages.map {
+        object {
+            var showArt = false
+            val skin = it
+        }
+    }
+
+    class CharacterViewHolder(binding: CharacterBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
         _binding = CharacterBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -25,9 +32,19 @@ class CharacterSkinInfoViewPagerAdapter(
 
         with(holder) {
             with(_pages[position]) {
-                _binding.ivCharImage.setImageResource(imageId)
-                _binding.tvCharName.text = name
+                _binding.ivCharImage.setImageResource(
+                    if (showArt && skin.artImageId != null) {
+                        skin.artImageId
+                    } else {
+                        skin.imageId
+                    }
+                )
+                _binding.tvCharName.text = skin.name
             }
         }
+    }
+
+    fun toggleArt(position: Int) {
+        _pages[position].showArt = !_pages[position].showArt
     }
 }
