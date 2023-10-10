@@ -11,7 +11,7 @@ data class Character(
     val health: Int,
     val armor: Int,
     val energy: Int,
-    val damage: Int,
+    val meleeDamage: Int,
     val color: Int,
     val buff: Buff,
     val skins: List<Skin>,

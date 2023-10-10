@@ -6,5 +6,5 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Buff(
     val description: String,
-    val imageId: Int
+    val imageUrl: String
 ) : Parcelable

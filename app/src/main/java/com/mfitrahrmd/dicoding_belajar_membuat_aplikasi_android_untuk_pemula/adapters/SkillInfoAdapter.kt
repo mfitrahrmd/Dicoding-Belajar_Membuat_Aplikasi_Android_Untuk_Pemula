@@ -3,6 +3,7 @@ package com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.ad
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.R
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.data.Skill
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.SkillBinding
@@ -24,7 +25,7 @@ class SkillInfoAdapter(private val _skills: List<Skill>) : RecyclerView.Adapter<
                 tvSkillName.text = holder.itemView.context.getString(R.string.skill_name, (position + 1).toString(), name)
                 tvSkillBasics.text = basicInfo
                 tvSkillDetails.text = detailInfo
-                ivSkill.setImageResource(imageId)
+                Glide.with(holder.itemView.context).load(imageUrl).into(ivSkill)
             }
         }
     }

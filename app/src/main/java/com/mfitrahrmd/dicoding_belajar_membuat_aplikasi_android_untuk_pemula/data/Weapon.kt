@@ -11,5 +11,5 @@ data class Weapon(
     val energyCost: Int,
     val critChance: Int,
     val inaccuracy: Int,
-    val imageId: Int
+    val imageUrl: String
 ) : Parcelable

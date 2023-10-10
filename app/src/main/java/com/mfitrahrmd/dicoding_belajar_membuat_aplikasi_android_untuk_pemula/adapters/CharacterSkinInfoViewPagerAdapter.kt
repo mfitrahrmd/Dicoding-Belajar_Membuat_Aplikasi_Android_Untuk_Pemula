@@ -3,6 +3,7 @@ package com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.ad
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.data.Skin
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.CharacterBinding
 
@@ -32,13 +33,11 @@ class CharacterSkinInfoViewPagerAdapter(
 
         with(holder) {
             with(_pages[position]) {
-                _binding.ivCharImage.setImageResource(
-                    if (showArt && skin.artImageId != null) {
-                        skin.artImageId
-                    } else {
-                        skin.imageId
-                    }
-                )
+                Glide.with(holder.itemView.context).load(if (showArt && skin.artImageUrl != null) {
+                    skin.artImageUrl
+                } else {
+                    skin.imageUrl
+                }).into(_binding.ivCharImage)
                 _binding.tvCharName.text = skin.name
             }
         }

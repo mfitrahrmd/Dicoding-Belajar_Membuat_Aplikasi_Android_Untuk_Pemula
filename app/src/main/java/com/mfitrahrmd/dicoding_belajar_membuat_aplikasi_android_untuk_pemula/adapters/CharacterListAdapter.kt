@@ -3,6 +3,7 @@ package com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.ad
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.data.Character
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.ItemCharacterBinding
 
@@ -28,7 +29,7 @@ class CharacterListAdapter(val characters: ArrayList<Character>) :
                 tvCharName.text = name
                 tvCharSpecialities.text = specialities.joinToString(", ")
                 tvCharInfo.text = info
-                ivChar.setImageResource(skins.first().imageId)
+                Glide.with(holder.itemView.context).load(skins.first().imageUrl).into(ivChar)
                 cardChar.setCardBackgroundColor(color)
             }
         }

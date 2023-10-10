@@ -3,6 +3,7 @@ package com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.ad
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.R
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.data.Weapon
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.WeaponBinding
@@ -30,7 +31,7 @@ class WeaponInfoViewPagerAdapter(
                     tvWeapEnrgyCost.text = energyCost.toString()
                     tvWeapCritChnce.text = critChance.toString()
                     tvWeapInacc.text = inaccuracy.toString()
-                    ivWeapImage.setImageResource(imageId)
+                    Glide.with(holder.itemView.context).load(imageUrl).into(ivWeapImage)
                 }
             }
         }

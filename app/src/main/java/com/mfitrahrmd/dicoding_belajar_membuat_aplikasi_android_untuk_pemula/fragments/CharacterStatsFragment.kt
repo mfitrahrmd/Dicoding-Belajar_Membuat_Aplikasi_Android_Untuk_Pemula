@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.adapters.WeaponInfoViewPagerAdapter
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.data.Character
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.CharacterStatsBinding
@@ -24,12 +25,12 @@ class CharacterStatsFragment(
         _binding = CharacterStatsBinding.inflate(inflater, container, false)
 
         _binding.tvBuffDesc.text = _character.buff.description
-        _binding.ivBuff.setImageResource(_character.buff.imageId)
+        Glide.with(this).load(_character.buff.imageUrl).into(_binding.ivBuff)
 
         _binding.tvCharHlth.text = _character.health.toString()
         _binding.tvCharArmr.text = _character.armor.toString()
         _binding.tvCharEnrgy.text = _character.energy.toString()
-        _binding.tvCharDmg.text = _character.damage.toString()
+        _binding.tvCharDmg.text = _character.meleeDamage.toString()
 
         _binding.vpWeap.adapter = WeaponInfoViewPagerAdapter(_character.weapons)
 

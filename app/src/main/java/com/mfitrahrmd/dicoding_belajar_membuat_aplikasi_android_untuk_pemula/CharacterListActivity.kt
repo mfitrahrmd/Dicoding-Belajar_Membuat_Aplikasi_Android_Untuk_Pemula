@@ -26,27 +26,25 @@ class CharacterListActivity : AppCompatActivity() {
         with(_characterListBinding.rvCharacters) {
             val characterListAdapter = CharacterListAdapter(arrayListOf(
                 Character(
-                    "Priestess",
-                    listOf("regen"),
-                    "The Priestess has good armor and energy, but bad health and melee damage",
-                    3,
+                    "Knight",
+                    listOf("burst damage"),
+                    "The Knight is the first playable character, being the default character unlocked at the start of the game. He wears silver armor with a red bandana scarf wrapped around his neck.",
+                    6,
                     5,
-                    200,
-                    3,
-                    R.color.priestess,
-                    Buff("Improve potion efectiveness", R.drawable.buff_potioneffectiveness),
+                    180,
+                    4,
+                    R.color.knight,
+                    Buff("No extra damage when shield is broken", "https://static.wikia.nocookie.net/soul-knight/images/8/88/BuffShieldBuffer.png/"),
                     listOf(
-                        Skin("Holy White", R.drawable.priestess_0, null),
-                        Skin("Boyi the Valor", R.drawable.priestess_7, null),
-                        Skin("Virgo", R.drawable.priestess_17, R.drawable.priestess_art_17)
+                        Skin("Default", "https://static.wikia.nocookie.net/soul-knight/images/4/44/Knight_0.gif/", "https://static.wikia.nocookie.net/soul-knight/images/8/8c/Knight_0_art.png/"),
+                        Skin("Vermillion", "https://static.wikia.nocookie.net/soul-knight/images/1/16/Knight_16.gif/", "https://static.wikia.nocookie.net/soul-knight/images/1/1a/Knight_16_art.png/"),
                     ),
                     listOf(
-                        Weapon("Wooden Cross", "Staff", 4, 2, 0, 5, R.drawable.priestess_weapon_0),
-                        Weapon("Wooden Cross Boyi", "Staff", 4, 2, 0, 5, R.drawable.priestess_weapon_7),
-                        Weapon("Stellar Whisper", "Staff", 4, 2, 0, 5, R.drawable.priestess_weapon_17),
+                        Weapon("Bad Pistol", "Handgun", 3, 0, 0, 5, "https://static.wikia.nocookie.net/soul-knight/images/2/2b/Knight_0_starter_unupgrade.png/"),
+                        Weapon("Inferno", "Handgun", 4, 2, 0, 5, "https://static.wikia.nocookie.net/soul-knight/images/1/19/Knight_16_starter.png/"),
                     ),
                     listOf(
-                        Skill("Regeneration Pact", R.drawable.priestess_skill_1, "Cast a pact that restores the health of you and allies.", "- Heals 1 HP to characters up to 3 times for 2 seconds.\n- Restores 5 HP per tick for Pets, Followers, and items bought from the Mechanical Engineer in The Origin.")
+                        Skill("Dual Wield", "https://static.wikia.nocookie.net/soul-knight/images/2/27/Knight's.png/", "Wield the current weapon in both hands for a short duration.", "- The Knight will bring out a second copy of the current weapon for 5 seconds. During the skill duration, both weapons can be fired with a minor time difference. Each copy will consume energy.\n- During the skill duration, the basic melee attack will also be performed twice.")
                     )
                 )
             ))

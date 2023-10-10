@@ -6,6 +6,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Skin(
     val name: String,
-    val imageId: Int,
-    val artImageId: Int?
+    val imageUrl: String,
+    val artImageUrl: String?
 ) : Parcelable

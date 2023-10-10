@@ -66,7 +66,7 @@ class CharacterDetailActivity : AppCompatActivity() {
 
             _binding.vpCharSkin.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
-                    if (character.skins[position].artImageId != null) {
+                    if (character.skins[position].artImageUrl != null) {
                         _binding.btnSwitchImage.visibility = View.VISIBLE
                     } else {
                         _binding.btnSwitchImage.visibility = View.GONE
