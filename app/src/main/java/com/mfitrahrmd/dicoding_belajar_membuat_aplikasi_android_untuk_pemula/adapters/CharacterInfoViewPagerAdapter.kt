@@ -7,7 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.adapter.FragmentViewHolder
 
 class CharacterInfoViewPagerAdapter(
-    private val _pages: Array<CharacterInfoPage>,
+    private val _pages: List<CharacterInfoPage>,
     fragmentManager: FragmentManager,
     lifecycle: Lifecycle
 ) : FragmentStateAdapter(fragmentManager, lifecycle) {

@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/tableLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TableRow
+        android:background="@drawable/table_row_border_topmost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
+        android:gravity="center"
+        android:padding="8dp"
+        android:weightSum="1">
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vp_weap"
             android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="200dp"/>
+            android:layout_weight=".75"
+            android:layout_height="200dp"
+            android:orientation="vertical"
+            android:tooltipText="starting weapon"/>
 
 
     </TableRow>
@@ -24,6 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@drawable/table_row_border"
         android:padding="8dp">
 
         <ImageView
@@ -31,7 +36,8 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight=".25"
-            android:scaleType="fitCenter" />
+            android:scaleType="fitCenter"
+            android:tooltipText="buff"/>
 
         <TextView
             android:id="@+id/tv_buff_desc"
@@ -47,74 +53,98 @@
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
-
-        <ImageView
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:background="@drawable/table_row_border">
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
-            android:layout_height="37.5dp"
-            android:layout_gravity="center"
             android:layout_weight="1"
-            android:src="@drawable/ic_health" />
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/ic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="37.5dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:src="@drawable/ic_armor" />
+                <ImageView
+                    android:id="@+id/ic_health"
+                    android:layout_width="0dp"
+                    android:layout_height="37.5dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_health"
+                    android:tooltipText="health"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="37.5dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:src="@drawable/ic_energy" />
+                <ImageView
+                    android:id="@+id/ic_armor"
+                    android:layout_width="0dp"
+                    android:layout_height="37.5dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_armor"
+                    android:tooltipText="armor"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="37.5dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:src="@drawable/ic_damage" />
+                <ImageView
+                    android:id="@+id/ic_energy"
+                    android:layout_width="0dp"
+                    android:layout_height="37.5dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_energy"
+                    android:tooltipText="energy"/>
 
-    </TableRow>
+                <ImageView
+                    android:id="@+id/ic_damage"
+                    android:layout_width="0dp"
+                    android:layout_height="37.5dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_damage"
+                    android:tooltipText="melee damage"/>
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp">
+            </LinearLayout>
 
-        <TextView
-            android:id="@+id/tv_char_hlth"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:textSize="24sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/ic">
+                <TextView
+                    android:id="@+id/tv_char_hlth"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/tv_char_armr"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/tv_char_armr"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/tv_char_enrgy"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/tv_char_enrgy"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/tv_char_dmg"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/tv_char_dmg"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </TableRow>
 

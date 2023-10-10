@@ -8,7 +8,7 @@ import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.dat
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.WeaponBinding
 
 class WeaponInfoViewPagerAdapter(
-    private val _pages: Array<Weapon>,
+    private val _pages: List<Weapon>,
 ) : RecyclerView.Adapter<WeaponInfoViewPagerAdapter.WeaponViewHolder>() {
     private lateinit var _binding: WeaponBinding
 

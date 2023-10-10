@@ -7,7 +7,7 @@ import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.dat
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.CharacterBinding
 
 class CharacterSkinInfoViewPagerAdapter(
-    pages: Array<Skin>,
+    pages: List<Skin>,
 ) : RecyclerView.Adapter<CharacterSkinInfoViewPagerAdapter.CharacterViewHolder>() {
     private lateinit var _binding: CharacterBinding
 
@@ -45,6 +45,9 @@ class CharacterSkinInfoViewPagerAdapter(
     }
 
     fun toggleArt(position: Int) {
-        _pages[position].showArt = !_pages[position].showArt
+        with(_pages[position]) {
+            showArt = !showArt
+        }
+        notifyItemChanged(position)
     }
 }

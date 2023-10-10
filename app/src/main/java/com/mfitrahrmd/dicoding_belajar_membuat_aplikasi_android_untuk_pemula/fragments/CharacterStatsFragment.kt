@@ -13,6 +13,7 @@ import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.dat
 class CharacterStatsFragment(
     private val _character: Character
 ) : Fragment() {
+    private var _first = true
     private lateinit var _binding: CharacterStatsBinding
 
     override fun onCreateView(
@@ -32,10 +33,18 @@ class CharacterStatsFragment(
 
         _binding.vpWeap.adapter = WeaponInfoViewPagerAdapter(_character.weapons)
 
+        // disable weapon view pager swipe from user
+        _binding.vpWeap.isUserInputEnabled = false
+
         return _binding.root
     }
 
-    fun setWeaponViewPagerPosition(position: Int) {
-        _binding.vpWeap.setCurrentItem(position, true)
+    fun selectWeaponPage(position: Int) {
+        // skip weapon view pager access for the first time, (because the _binding has not been initialize yet)
+        if (position == 0 && _first) {
+            _first = false
+            return
+        }
+        _binding.vpWeap.currentItem = position
     }
 }

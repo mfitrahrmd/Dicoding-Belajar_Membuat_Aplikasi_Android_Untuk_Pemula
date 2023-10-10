@@ -3,10 +3,13 @@ package com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.adapters.CharacterInfoViewPagerAdapter
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.adapters.CharacterSkinInfoViewPagerAdapter
+import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.adapters.SkillInfoAdapter
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.data.Character
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.ActivityCharacterDetailBinding
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.fragments.CharacterStatsFragment
@@ -30,10 +33,17 @@ class CharacterDetailActivity : AppCompatActivity() {
             // Update view
             _binding.tvCharName.text = character.name
 
+            // Instantiate vertical recycler view character skills
+            val characterSkillAdapter = SkillInfoAdapter(character.skills)
+
+            _binding.rvSkills.layoutManager = LinearLayoutManager(this)
+
+            _binding.rvSkills.adapter = characterSkillAdapter
+
             // Instantiate horizontal view pager character info
             val characterStatsFragment = CharacterStatsFragment(character)
 
-            val characterInfoPages = arrayOf(
+            val characterInfoPages = listOf(
                 CharacterInfoViewPagerAdapter.CharacterInfoPage("Stats", characterStatsFragment)
             )
 
@@ -50,19 +60,21 @@ class CharacterDetailActivity : AppCompatActivity() {
 
             _binding.vpCharSkin.adapter = characterSkinVPA
 
-            // Also slide weapon view pager whenever skin view pager is slided
-            _binding.vpCharSkin.registerOnPageChangeCallback(object :
-                ViewPager2.OnPageChangeCallback() {
-                override fun onPageSelected(position: Int) {
-                    super.onPageSelected(position)
-                    characterStatsFragment.setWeaponViewPagerPosition(position) // slide weapon view pager
-                }
-            })
-
             _binding.btnSwitchImage.setOnClickListener {
                 characterSkinVPA.toggleArt(_binding.vpCharSkin.currentItem) // toggle show character skin illustration art
-                characterSkinVPA.notifyItemChanged(_binding.vpCharSkin.currentItem) // notify adapter if there is data changed, so the view gets re-bind
             }
+
+            _binding.vpCharSkin.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    if (character.skins[position].artImageId != null) {
+                        _binding.btnSwitchImage.visibility = View.VISIBLE
+                    } else {
+                        _binding.btnSwitchImage.visibility = View.GONE
+                    }
+
+                    characterStatsFragment.selectWeaponPage(position)
+                }
+            })
         }
     }
 
