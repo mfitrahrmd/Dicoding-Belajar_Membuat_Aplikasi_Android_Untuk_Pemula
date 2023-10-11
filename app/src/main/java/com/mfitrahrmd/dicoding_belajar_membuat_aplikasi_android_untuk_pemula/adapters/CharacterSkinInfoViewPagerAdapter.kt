@@ -1,5 +1,6 @@
 package com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -30,19 +31,22 @@ class CharacterSkinInfoViewPagerAdapter(
     override fun getItemCount(): Int = _pages.size
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
+        with(_pages[position]) {
+            Glide.with(holder.itemView.context).load(if (showArt && skin.artImageUrl != null) {
+                skin.artImageUrl
+            } else {
+                skin.imageUrl
+            }).into(_binding.ivCharImage)
+            _binding.tvCharName.text = skin.name
 
-        with(holder) {
-            with(_pages[position]) {
-                Glide.with(holder.itemView.context).load(if (showArt && skin.artImageUrl != null) {
-                    skin.artImageUrl
-                } else {
-                    skin.imageUrl
-                }).into(_binding.ivCharImage)
-                _binding.tvCharName.text = skin.name
+            // for debug purpose
+            _binding.root.setOnClickListener {
+                Log.d("position", position.toString())
             }
         }
     }
 
+    // TODO : BUG! change image art more than one skin causes the position swapped unexpectedly
     fun toggleArt(position: Int) {
         with(_pages[position]) {
             showArt = !showArt
