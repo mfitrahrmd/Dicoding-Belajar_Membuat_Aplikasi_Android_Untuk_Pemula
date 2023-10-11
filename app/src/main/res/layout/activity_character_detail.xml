@@ -44,30 +44,26 @@
                 android:background="@color/transparent"
                 android:src="@drawable/baseline_compare_arrows_24" />
 
-            <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical|start"
-                android:background="@color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/baseline_chevron_left_24" />
-
-            <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical|end"
-                android:background="@color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/baseline_chevron_right_24" />
-
         </FrameLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/vp_char_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            app:tabGravity="center"
+            android:background="@color/transparent"
+            app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+            app:layout_constraintStart_toStartOf="@+id/frameLayout"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+            app:tabBackground="@drawable/tab_selector" />
 
         <LinearLayout
             android:id="@+id/ll_char_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+            app:layout_constraintTop_toBottomOf="@+id/vp_char_tab"
             tools:layout_editor_absoluteX="16dp">
 
             <com.google.android.material.tabs.TabLayout

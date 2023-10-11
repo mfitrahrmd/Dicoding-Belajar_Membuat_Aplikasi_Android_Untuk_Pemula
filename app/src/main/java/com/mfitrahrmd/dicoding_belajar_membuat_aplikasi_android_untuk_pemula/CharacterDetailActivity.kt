@@ -60,6 +60,10 @@ class CharacterDetailActivity : AppCompatActivity() {
 
             _binding.vpCharSkin.adapter = characterSkinVPA
 
+            // Setup tab layout for character info
+            TabLayoutMediator(_binding.vpCharTab, _binding.vpCharSkin) { tab, position ->
+            }.attach()
+
             _binding.btnSwitchImage.setOnClickListener {
                 characterSkinVPA.toggleArt(_binding.vpCharSkin.currentItem) // toggle show character skin illustration art
             }
