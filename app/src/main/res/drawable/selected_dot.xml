@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
-        <shape
-            android:innerRadius="0dp"
-            android:shape="ring"
-            android:thickness="4dp"
-            android:useLevel="false">
-            <solid
-                android:color="?attr/colorPrimary" />
-        </shape>
+    <item android:gravity="center">
+        <vector
+            android:width="24dp"
+            android:height="24dp"
+            android:viewportWidth="48"
+            android:viewportHeight="48"
+            android:tint="?attr/colorPrimary">
+            <path
+                android:pathData="M18,12L30,12L30,36L18,36z"
+                android:fillColor="#FF0000"/>
+            <path
+                android:pathData="M15,14.182L33,14.182L33,33.818L15,33.818z"
+                android:fillColor="#FF0000"/>
+            <path
+                android:pathData="M12,17.455L36,17.455L36,30.545L12,30.545z"
+                android:fillColor="#FF0000"/>
+        </vector>
     </item>
 </layer-list>

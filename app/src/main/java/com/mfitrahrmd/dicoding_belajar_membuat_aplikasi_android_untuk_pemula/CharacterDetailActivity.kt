@@ -60,7 +60,7 @@ class CharacterDetailActivity : AppCompatActivity() {
 
             _binding.vpCharSkin.adapter = characterSkinVPA
 
-            // Setup tab layout for character info
+            // Setup tab layout for character skin
             TabLayoutMediator(_binding.vpCharTab, _binding.vpCharSkin) { tab, position ->
             }.attach()
 
