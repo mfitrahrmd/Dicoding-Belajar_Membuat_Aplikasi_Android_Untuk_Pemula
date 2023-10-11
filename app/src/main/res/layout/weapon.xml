@@ -19,15 +19,15 @@
             android:id="@+id/tv_weap_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="16sp" />
+            style="@style/BodyLarge"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tv_weap_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="16sp" />
+            style="@style/BodyMedium"
+            android:gravity="center" />
     </LinearLayout>
 
     <TableLayout
@@ -52,9 +52,8 @@
                 android:id="@+id/tv_weap_dmg"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:gravity="center"
-                android:text="4"
-                android:textSize="16sp" />
+                style="@style/TitleMedium"
+                android:gravity="center"/>
         </TableRow>
 
         <TableRow
@@ -72,9 +71,8 @@
                 android:id="@+id/tv_weap_enrgy_cost"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:gravity="center"
-                android:text="2"
-                android:textSize="16sp" />
+                style="@style/TitleMedium"
+                android:gravity="center"/>
         </TableRow>
 
         <TableRow
@@ -92,9 +90,8 @@
                 android:id="@+id/tv_weap_crit_chnce"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:gravity="center"
-                android:text="2"
-                android:textSize="16sp" />
+                style="@style/TitleMedium"
+                android:gravity="center"/>
         </TableRow>
 
         <TableRow
@@ -112,9 +109,8 @@
                 android:id="@+id/tv_weap_inacc"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:gravity="center"
-                android:text="0"
-                android:textSize="16sp" />
+                style="@style/TitleMedium"
+                android:gravity="center"/>
         </TableRow>
 
     </TableLayout>

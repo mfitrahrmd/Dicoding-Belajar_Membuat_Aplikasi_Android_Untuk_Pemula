@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
@@ -29,9 +28,8 @@
                 android:id="@+id/tv_char_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Priestess"
                 android:gravity="center"
-                android:textSize="32sp"
+                style="@style/HeadlineMedium"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -43,10 +41,9 @@
                 android:id="@+id/tv_title_specialities"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="specialities"
+                style="@style/TitleSmall.Bold"
+                android:text="@string/specialities"
                 android:textAllCaps="true"
-                android:textSize="12sp"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/tv_char_info"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_char_name" />
@@ -55,7 +52,7 @@
                 android:id="@+id/tv_char_specialities"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Regen"
+                style="@style/LabelLarge"
                 app:layout_constraintStart_toStartOf="@+id/tv_title_specialities"
                 app:layout_constraintTop_toBottomOf="@+id/tv_title_specialities" />
 
@@ -63,9 +60,9 @@
                 android:id="@+id/tv_char_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/BodyMedium"
                 android:maxLines="3"
                 android:ellipsize="end"
-                android:text="The Priestess has good armor and energy, but bad health and melee damage."
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -77,7 +74,6 @@
         android:layout_height="225dp"
         android:layout_marginTop="-100dp"
         android:layout_gravity="end"
-        android:src="@drawable/priestess_0"
         android:transitionName="iv_char"
         />
 

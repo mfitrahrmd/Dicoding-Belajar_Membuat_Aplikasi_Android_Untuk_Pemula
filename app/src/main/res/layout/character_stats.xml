@@ -44,8 +44,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".75"
-            android:gravity="center"
-            android:textSize="16sp" />
+            style="TitleMedium"
+            android:gravity="center"/>
 
     </TableRow>
 
@@ -115,36 +115,35 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:textSize="24sp" />
+                    style="@style/BodyLarge"
+                    android:gravity="center_horizontal" />
 
                 <TextView
                     android:id="@+id/tv_char_armr"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:textSize="24sp" />
+                    style="@style/BodyLarge"
+                    android:gravity="center_horizontal" />
 
                 <TextView
                     android:id="@+id/tv_char_enrgy"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:textSize="24sp" />
+                    style="@style/BodyLarge"
+                    android:gravity="center_horizontal" />
 
                 <TextView
                     android:id="@+id/tv_char_dmg"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:textSize="24sp" />
+                    style="@style/BodyLarge"
+                    android:gravity="center_horizontal" />
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     </TableRow>
 

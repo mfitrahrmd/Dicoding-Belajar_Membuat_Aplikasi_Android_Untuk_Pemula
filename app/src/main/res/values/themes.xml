@@ -43,4 +43,19 @@
     <style name="BodyMedium" parent="TextAppearance.Material3.BodyMedium">
         <item name="fontFamily">@font/pixelify_sans_font</item>
     </style>
+    <style name="HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="fontFamily">@font/pixelify_sans_font</item>
+    </style>
+    <style name="TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="fontFamily">@font/pixelify_sans_font</item>
+    </style>
+    <style name="TitleSmall.Bold" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/pixelify_sans_font</item>
+    </style>
+    <style name="TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/pixelify_sans_font</item>
+    </style>
 </resources>

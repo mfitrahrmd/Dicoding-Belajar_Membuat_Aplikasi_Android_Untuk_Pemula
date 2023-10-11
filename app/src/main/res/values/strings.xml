@@ -2,4 +2,5 @@
     <string name="app_name">Dicoding-Belajar_Membuat_Aplikasi_Android_Untuk_Pemula</string>
     <string name="parentheses">(%1$s)</string>
     <string name="skill_name">Skill %s - %s</string>
+    <string name="specialities">specialities</string>
 </resources>
