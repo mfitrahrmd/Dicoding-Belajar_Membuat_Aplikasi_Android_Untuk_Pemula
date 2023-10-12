@@ -45,7 +45,9 @@ class CharacterListActivity : AppCompatActivity() {
                     ),
                     listOf(
                         Skill("Dual Wield", "https://static.wikia.nocookie.net/soul-knight/images/2/27/Knight's.png/", "Wield the current weapon in both hands for a short duration.", "- The Knight will bring out a second copy of the current weapon for 5 seconds. During the skill duration, both weapons can be fired with a minor time difference. Each copy will consume energy.\n- During the skill duration, the basic melee attack will also be performed twice.")
-                    )
+                    ),
+                    "The Knight has one of the highest health of all characters. He is hard to kill, and his energy is average as compared to other characters, which makes him very suitable for starting players. His starting buff also greatly increases his defensive capabilities. However, his damage output depends solely on his weapon, and unlike more specialized glass cannons, he is no answer when it comes to evasion, relying solely on shock and awe to suppress enemies or even bosses before they can threaten him.",
+                    listOf("You go, I'm taking a break", "Talk to my hand!", "They never shut the fridge door")
                 )
             ))
 

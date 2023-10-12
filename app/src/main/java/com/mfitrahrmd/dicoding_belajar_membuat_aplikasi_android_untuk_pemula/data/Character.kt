@@ -16,5 +16,7 @@ data class Character(
     val buff: Buff,
     val skins: List<Skin>,
     val weapons: List<Weapon>,
-    val skills: List<Skill>
+    val skills: List<Skill>,
+    val statistics: String,
+    val quotes: List<String>
 ) : Parcelable

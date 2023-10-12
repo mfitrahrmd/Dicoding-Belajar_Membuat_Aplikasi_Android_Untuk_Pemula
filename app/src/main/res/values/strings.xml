@@ -3,4 +3,6 @@
     <string name="parentheses">(%1$s)</string>
     <string name="skill_name">Skill %s - %s</string>
     <string name="specialities">specialities</string>
+    <string name="statistics">Statistics</string>
+    <string name="quotes">Quotes</string>
 </resources>

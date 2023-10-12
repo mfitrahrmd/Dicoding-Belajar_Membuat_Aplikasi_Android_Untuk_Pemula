@@ -12,6 +12,7 @@ import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.ada
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.adapters.SkillInfoAdapter
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.data.Character
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.ActivityCharacterDetailBinding
+import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.fragments.CharacterLoreFragment
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.fragments.CharacterStatsFragment
 
 class CharacterDetailActivity : AppCompatActivity() {
@@ -42,9 +43,11 @@ class CharacterDetailActivity : AppCompatActivity() {
 
             // Instantiate horizontal view pager character info
             val characterStatsFragment = CharacterStatsFragment(character)
+            val characterLoreFragment = CharacterLoreFragment(character.statistics, character.quotes)
 
             val characterInfoPages = listOf(
-                CharacterInfoViewPagerAdapter.CharacterInfoPage("Stats", characterStatsFragment)
+                CharacterInfoViewPagerAdapter.CharacterInfoPage("Status", characterStatsFragment),
+                CharacterInfoViewPagerAdapter.CharacterInfoPage("Lore", characterLoreFragment)
             )
 
             _binding.vpCharInfo.adapter =
