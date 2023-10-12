@@ -34,13 +34,6 @@ class CharacterDetailActivity : AppCompatActivity() {
             // Update view
             _binding.tvCharName.text = character.name
 
-            // Instantiate vertical recycler view character skills
-            val characterSkillAdapter = SkillInfoAdapter(character.skills)
-
-            _binding.rvSkills.layoutManager = LinearLayoutManager(this)
-
-            _binding.rvSkills.adapter = characterSkillAdapter
-
             // Instantiate horizontal view pager character info
             val characterStatsFragment = CharacterStatsFragment(character)
             val characterLoreFragment = CharacterLoreFragment(character.statistics, character.quotes)

@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.adapters.SkillInfoAdapter
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.adapters.WeaponInfoViewPagerAdapter
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.data.Character
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.CharacterStatsBinding
@@ -33,6 +35,13 @@ class CharacterStatsFragment(
         _binding.tvCharDmg.text = _character.meleeDamage.toString()
 
         _binding.vpWeap.adapter = WeaponInfoViewPagerAdapter(_character.weapons)
+
+        // Instantiate vertical recycler view character skills
+        val characterSkillAdapter = SkillInfoAdapter(_character.skills)
+
+        _binding.rvSkills.layoutManager = LinearLayoutManager(container?.context)
+
+        _binding.rvSkills.adapter = characterSkillAdapter
 
         // disable weapon view pager swipe from user
         _binding.vpWeap.isUserInputEnabled = false
