@@ -30,7 +30,9 @@ class CharacterListAdapter(val characters: ArrayList<Character>) :
                 tvCharSpecialities.text = specialities.joinToString(", ")
                 tvCharInfo.text = info
                 Glide.with(holder.itemView.context).load(skins.first().imageUrl).into(ivChar)
-                cardChar.setCardBackgroundColor(color)
+                if (color != null) {
+                    cardChar.setCardBackgroundColor(color)
+                }
             }
         }
         holder.itemView.setOnClickListener {

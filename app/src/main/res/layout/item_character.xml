@@ -16,7 +16,7 @@
         android:id="@+id/card_char"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/priestess"
+        app:cardBackgroundColor="?attr/colorSecondary"
         app:cardCornerRadius="24dp">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
