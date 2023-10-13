@@ -58,4 +58,8 @@
     <style name="TitleMedium" parent="TextAppearance.Material3.TitleMedium">
         <item name="fontFamily">@font/pixelify_sans_font</item>
     </style>
+    
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
 </resources>
