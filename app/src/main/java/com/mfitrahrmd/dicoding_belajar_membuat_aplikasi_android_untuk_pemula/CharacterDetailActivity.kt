@@ -1,5 +1,6 @@
 package com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -75,6 +76,13 @@ class CharacterDetailActivity : AppCompatActivity() {
                     characterStatsFragment.selectWeaponPage(position)
                 }
             })
+
+            _binding.actionShare.setOnClickListener {
+                val intent = Intent(Intent.ACTION_SEND)
+                intent.putExtra(Intent.EXTRA_TEXT, character.toString())
+                intent.type = "text/plain"
+                startActivity(Intent.createChooser(intent, "Share \"${character.name}\" to : "))
+            }
         }
     }
 
