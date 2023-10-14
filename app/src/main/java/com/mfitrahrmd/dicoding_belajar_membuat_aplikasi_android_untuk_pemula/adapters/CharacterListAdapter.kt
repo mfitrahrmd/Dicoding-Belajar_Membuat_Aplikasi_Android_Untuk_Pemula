@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.data.Character
 import com.mfitrahrmd.dicoding_belajar_membuat_aplikasi_android_untuk_pemula.databinding.ItemCharacterBinding
 
-class CharacterListAdapter(val characters: ArrayList<Character>) :
+class CharacterListAdapter(private val _characters: List<Character>) :
     RecyclerView.Adapter<CharacterListAdapter.CharacterListViewHolder>() {
     private var _onItemClickCallback: ((Character) -> Unit)? = null
 
@@ -21,11 +21,11 @@ class CharacterListAdapter(val characters: ArrayList<Character>) :
         return CharacterListViewHolder(itemCharacterBinding)
     }
 
-    override fun getItemCount(): Int = characters.size
+    override fun getItemCount(): Int = _characters.size
 
     override fun onBindViewHolder(holder: CharacterListViewHolder, position: Int) {
         with(holder.itemCharacterBinding) {
-            with(characters[position]) {
+            with(_characters[position]) {
                 tvCharName.text = name
                 tvCharSpecialities.text = specialities.joinToString(", ")
                 tvCharInfo.text = info
@@ -36,7 +36,7 @@ class CharacterListAdapter(val characters: ArrayList<Character>) :
             }
         }
         holder.itemView.setOnClickListener {
-            _onItemClickCallback?.invoke(characters[position])
+            _onItemClickCallback?.invoke(_characters[position])
         }
     }
 
