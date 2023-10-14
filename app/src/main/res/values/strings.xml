@@ -1,9 +1,11 @@
 <resources>
-    <string name="app_name">Dicoding-Belajar_Membuat_Aplikasi_Android_Untuk_Pemula</string>
+    <string name="app_name">Soul Knight Characters</string>
     <string name="parentheses">(%1$s)</string>
     <string name="skill_name">Skill %s - %s</string>
     <string name="specialities">specialities</string>
     <string name="statistics">Statistics</string>
     <string name="quotes">Quotes</string>
     <string name="about">About</string>
+    <string name="self_name">Muhamad Fitrah Ramadhan</string>
+    <string name="self_email">tgcfitrah26@gmail.com</string>
 </resources>
