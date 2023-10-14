@@ -19,4 +19,21 @@ data class Character(
     val skills: List<Skill>,
     val statistics: String,
     val quotes: List<String>
-) : Parcelable
+) : Parcelable {
+    fun formattedString(): String {
+        return """Character Name: $name
+            |Specialities : ${specialities.joinToString(", ")}
+            |Info : $info
+            |Max Health : $health
+            |Max Armor : $armor
+            |Max Energy : $energy
+            |Melee Damage : $meleeDamage
+            |Buff : ${buff.description}
+            |Skins : ${skins.map { it.name }.joinToString(", ")}
+            |Starting Weapon : ${weapons.first().name}
+            |Skills : ${skills.map { "\n- ${it.name} (${it.basicInfo})" }}
+            |Statistics : $statistics
+            |Quotes : ${quotes.joinToString(", ")}
+        """.trimMargin()
+    }
+}

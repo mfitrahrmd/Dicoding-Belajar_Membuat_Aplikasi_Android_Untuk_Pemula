@@ -79,7 +79,7 @@ class CharacterDetailActivity : AppCompatActivity() {
 
             _binding.actionShare.setOnClickListener {
                 val intent = Intent(Intent.ACTION_SEND)
-                intent.putExtra(Intent.EXTRA_TEXT, character.toString())
+                intent.putExtra(Intent.EXTRA_TEXT, character.formattedString())
                 intent.type = "text/plain"
                 startActivity(Intent.createChooser(intent, "Share \"${character.name}\" to : "))
             }
