@@ -82,7 +82,9 @@ class CharacterListActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // TODO : go to about page
+        when(item.itemId) {
+            R.id.about_page -> startActivity(Intent(this@CharacterListActivity, AboutActivity::class.java))
+        }
 
         return super.onOptionsItemSelected(item)
     }
