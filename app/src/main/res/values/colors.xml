@@ -67,4 +67,13 @@
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
     <color name="knight">#585858</color>
+    <color name="rogue">#BF484D</color>
+    <color name="witch">#C77A40</color>
+    <color name="assassin">#121212</color>
+    <color name="elf">#588819</color>
+    <color name="alchemist">#80E027</color>
+    <color name="werewolf">#BB8B51</color>
+    <color name="druid">#6F910D</color>
+    <color name="necromancer">#3F3F74</color>
+    <color name="miner">#F09517</color>
 </resources>

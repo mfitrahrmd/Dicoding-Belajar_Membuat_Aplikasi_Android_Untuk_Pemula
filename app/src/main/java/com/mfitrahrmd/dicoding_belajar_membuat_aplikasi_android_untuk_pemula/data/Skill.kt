@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Skill(
     val name: String,
-    val imageUrl: String,
     val basicInfo: String,
-    val detailInfo: String
+    val detailInfo: String,
+    val imageUrl: String
 ) : Parcelable
